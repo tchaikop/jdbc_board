@@ -5,6 +5,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -83,10 +84,26 @@
 			<tr>
 			
 				<td>${bDto.bnum }</td>
-				<td>${bDto.btitle }</td>
+				<td>
+				<a href="boardView.jsp?bnum=${bDto.bnum }">
+				<c:choose>
+					<c:when test="${fn:length(bDto.btitle)>10 }">
+					
+					${fn:substring(bDto.btitle,0,10) }...
+					</c:when>
+					<c:otherwise>
+					${bDto.btitle }
+					</c:otherwise>
+								
+				</c:choose>
+				</a>
+				
+				</td>
 				<td>${bDto.bwriter }</td>
 				<td>${bDto.bhit }</td>
-				<td>${bDto.bdate }</td>
+				<td>
+				${fn:substring(bDto.bdate,0,10) }
+				</td>
 			</tr>
 		
 		</c:forEach>
