@@ -92,9 +92,10 @@
 <p>내용: ${boardDto.bcontent }</p>
 <p>작성자: ${boardDto.bwriter }</p>
 <hr>
-<a href="boardlist.jsp">글목록</a>
-<a href="#">글수정</a>
-<a href="#">글삭제</a>
+<input type="button" value="글목록" onclick="location.href='boardlist.jsp'">
+<input type="button" value="글수정" onclick="location.href='boardModifyform.jsp?bnum=${boardDto.bnum }'">
+<input type="button" value="글삭제" onclick="location.href='delete.jsp?bnum=${boardDto.bnum }'">
+
 
 </body>
 </html>

@@ -40,6 +40,7 @@
 		
 		if(result == 1 ) {
 			System.out.println("글 작성 성공");
+			response.sendRedirect("boardlist.jsp");
 		}else {
 			System.out.println("글 작성 실패");
 		}
@@ -53,6 +54,7 @@
 		if(conn != null) conn.close();
 	}
 
+	
 
 
 
